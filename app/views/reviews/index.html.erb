@@ -1,0 +1,23 @@
+<hr>
+  <div class="container">
+    <h1><strong>Reviews (<%= @reviews.length%>)</strong></h1>
+  </div>
+    <div class="container">
+      <div class="row">
+        <% @reviews.each do |review| %>
+            <div class="col-sm-12">
+              <% review.rating.times do  %>
+                  <i class="fas fa-star" style="color: #E77131"></i>
+              <% end %>
+              <% (5 - review.rating).times do  %>
+                  <i class="far fa-star" style="color: #E77131"></i>
+              <% end %>
+              <p><strong><%=review.created_at.strftime("%d-%m-%Y")%> : </strong> <%=review.content%></p>
+            </div>
+            <br>
+        <% end %>
+      </div>
+      <br>
+      <button class="btn btn-dark"> <%=link_to 'Back to restaurant info', restaurant_path(@restaurant) %> </button>
+  </div>
+</hr>

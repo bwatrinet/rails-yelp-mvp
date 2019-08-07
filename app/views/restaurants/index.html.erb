@@ -1,0 +1,26 @@
+<hr>
+    <div class="container">
+      <div class="d-flex justify-content-between">
+      <h1><strong>Restaurants</strong></h1>
+      <button class="btn btn-info"> <%=link_to '➕ Add new restaurant', new_restaurant_path%> </button>
+      </div>
+    </div>
+    <br>
+    <div class="container">
+      <div class="row">
+        <% @restaurants.each do |restaurant| %>
+            <div class="col-sm-4" style="padding:20px";>
+              <img src="https://source.unsplash.com/user/edgarraw/320x150" style="border-radius:5px">
+              <br>
+              <h4><%=restaurant.name%></h4>
+              <button class="btn btn-info"> <%=link_to 'More info', restaurant_path(restaurant)%> </button>
+              <br>
+            </div>
+            <br>
+        <% end %>
+      </div>
+      <br>
+  </div>
+
+</hr>
+
